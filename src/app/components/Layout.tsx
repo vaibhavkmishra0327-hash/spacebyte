@@ -69,9 +69,11 @@ export function Layout() {
             onClick={() => navigate("/")}
             className="flex items-center gap-2.5 group"
           >
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-sb-cyan to-sb-violet/40 flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
-              <Satellite className="w-4 h-4 text-sb-void" />
-            </div>
+            <img
+              src="/logo.png"
+              alt="SpaceByte"
+              className="h-9 w-auto transition-transform duration-300 group-hover:scale-105"
+            />
             <div>
               <div
                 className="font-display text-sb-text-primary tracking-tight text-[0.9375rem] font-semibold"
