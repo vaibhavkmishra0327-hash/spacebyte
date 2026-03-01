@@ -70,7 +70,7 @@ export function Layout() {
             className="flex items-center gap-2.5 group"
           >
             <img
-              src="/logo.png"
+              src="/logo-small.png"
               alt="SpaceByte"
               className="h-10 w-auto rounded-lg transition-transform duration-300 group-hover:scale-105 object-contain"
             />
