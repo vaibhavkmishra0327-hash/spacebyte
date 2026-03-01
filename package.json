@@ -1,11 +1,35 @@
 {
-  "name": "@figma/my-make-file",
-  "private": true,
-  "version": "0.0.1",
+  "name": "spacebyte-dashboard-template",
+  "private": false,
+  "version": "1.0.0",
   "type": "module",
+  "description": "A premium React + Tailwind CSS dashboard template with a space-operations terminal aesthetic. Features dark/light themes, animated UI, Supabase backend, and 6 fully-built pages.",
+  "author": "Vaibhav Mishra <vaibhavkmishra0327@gmail.com>",
+  "license": "MIT",
+  "keywords": [
+    "react",
+    "dashboard",
+    "template",
+    "tailwindcss",
+    "space",
+    "terminal",
+    "supabase",
+    "framer-motion",
+    "vite",
+    "dark-mode",
+    "light-mode",
+    "recharts",
+    "radix-ui"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vaibhavkmishra0327-hash/spacebyte"
+  },
+  "homepage": "https://spacebyte.vercel.app",
   "scripts": {
+    "dev": "vite",
     "build": "vite build",
-    "dev": "vite"
+    "preview": "vite preview"
   },
   "dependencies": {
     "@emotion/react": "11.14.0",
