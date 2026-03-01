@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#040812" />
+    <meta name="description" content="SpaceByte — India's Space Intelligence Terminal. Real-time launches, startup intelligence, market analytics." />
+    <title>SpaceByte — India's Space Intelligence Terminal</title>
+    <style>
+      html, body { margin: 0; padding: 0; background: #040812; overflow-x: hidden; }
+      html.light, html.light body { background: #f0f4f8; }
+      #root { min-height: 100vh; }
+      /* Critical loading screen */
+      .sb-loader { position: fixed; inset: 0; z-index: 9999; background: #040812; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 24px; transition: opacity 0.6s ease; }
+      html.light .sb-loader { background: #f0f4f8; }
+      .sb-loader.fade-out { opacity: 0; pointer-events: none; }
+      .sb-loader-ring { width: 48px; height: 48px; border: 2px solid rgba(56,189,248,0.1); border-top-color: #38bdf8; border-radius: 50%; animation: sb-spin 1s cubic-bezier(0.4,0,0.2,1) infinite; }
+      html.light .sb-loader-ring { border-color: rgba(2,132,199,0.1); border-top-color: #0284c7; }
+      .sb-loader-text { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(56,189,248,0.5); }
+      html.light .sb-loader-text { color: rgba(2,132,199,0.5); }
+      @keyframes sb-spin { to { transform: rotate(360deg); } }
+    </style>
+  </head>
+
+  <body>
+    <script>
+      // Prevent flash — apply saved theme before paint
+      (function(){var t=localStorage.getItem('sb-theme');if(t==='light'){document.documentElement.classList.add('light')}else{document.documentElement.classList.add('dark')}})();
+    </script>
+    <div id="sb-loader" class="sb-loader">
+      <div class="sb-loader-ring"></div>
+      <div class="sb-loader-text">Initializing Terminal</div>
+    </div>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+    <script>
+      window.addEventListener('load', () => {
+        setTimeout(() => {
+          const loader = document.getElementById('sb-loader');
+          if (loader) { loader.classList.add('fade-out'); setTimeout(() => loader.remove(), 700); }
+        }, 800);
+      });
+    </script>
+  </body>
+</html>
+  
